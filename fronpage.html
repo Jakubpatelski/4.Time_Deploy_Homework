@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    text-align: center;
+    
+    
+        
+    
+    
+
+
+}
+body {
+    /* background: linear-gradient(#e66465, #9198e5); */
+    background: linear-gradient(to bottom, #1f4287, #ffffff);
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+   
+    
+  }
+
+  
+header{
+    color: white;
+    font-size: 40px;
+    
+}
+h2{
+    color:  #4169e1;
+    font-size: 60px;
+    font-weight: bold;
+
+}
+
+p{
+    padding: 2%;
+    font-size: 20px;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KKS Lech Poznan Counter</h1>
+    </header>
+    <p>KKS Lech Poznań or simply Lech Poznań, is a Polish professional football club based in Poznań and currently competing in the Ekstraklasa, the nation's highest division. The club is named after Lech, the legendary founder of the Polish nation. On March 1922 the club celebrated its 100 anniversary winning  the club's eighth championship, their first in seven years. </p>
+    <h1>Today is  <span id="time-left"></span></h1>
+   
+    <h2>Its been <span id="time-left2"></span> since Lech Poznan was founded</h2>
+
+   
+    <h1>This is how Poznan celbrated 100th aniversary of Lech Poznan</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sM1TdWJKoQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+    <script>
+
+const timeLeft = document.getElementById('time-left')
+const timeLeft2 = document.getElementById('time-left2')
+const timeLeft3 = document.getElementById('time-left3')
+
+const championship = new Date('March 19 1922 00:00:00')
+
+const second = 1000
+const minute = second * 60
+const hour = minute * 60
+const day = hour * 24
+let timerId
+
+function countDown(){
+    const today = new Date()
+    console.log(today)
+    const timeSpan = championship - today
+    console.log(timeSpan)
+
+const days = Math.floor(Math.abs(timeSpan) / day)
+const hours = Math.floor((Math.abs(timeSpan) % day) / hour)
+const minutes = Math.floor((Math.abs(timeSpan) % hour) / minute)
+const seconds = Math.floor((Math.abs(timeSpan) % minute) / second)
+timeLeft2.innerText = `${days} days ${hours} hours ${minutes} minutes  ${seconds} seconds`
+   
+
+}
+
+ timerId = setInterval(countDown, second)
+
+ //Set Time 
+setInterval(function() {
+    let date = new Date();
+    timeLeft.innerText = date.toLocaleString(); //Method
+    timeLeft3.innerText = date.toLocaleTimeString()
+
+}, 1000);
+    </script>
+</body>
+</html>
