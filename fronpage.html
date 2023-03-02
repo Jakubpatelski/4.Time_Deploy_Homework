@@ -69,7 +69,6 @@ p{
 
 const timeLeft = document.getElementById('time-left')
 const timeLeft2 = document.getElementById('time-left2')
-const timeLeft3 = document.getElementById('time-left3')
 
 const championship = new Date('March 19 1922 00:00:00')
 
@@ -100,7 +99,6 @@ timeLeft2.innerText = `${days} days ${hours} hours ${minutes} minutes  ${seconds
 setInterval(function() {
     let date = new Date();
     timeLeft.innerText = date.toLocaleString(); //Method
-    timeLeft3.innerText = date.toLocaleTimeString()
 
 }, 1000);
     </script>
