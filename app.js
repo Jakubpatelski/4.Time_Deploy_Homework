@@ -7,12 +7,7 @@ app.use(express.json())
 // app.use(express.static('public'))
 
 
-const newDate = Date()
-app.get('/test', (req, res) => {
-    res.send({date: newDate})
-})
-
-app.get('/time', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname + '/fronpage.html')
 })
 
